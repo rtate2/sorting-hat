@@ -7,7 +7,6 @@ const printToDom = (divId, textToPrint) => {
     divContainer.innerHTML += textToPrint
 }
 
-
 // create jumbotron to print to dom immediately
 const jumboTron = (e) => {
     const jumboString = `
@@ -36,8 +35,6 @@ const jumboTron = (e) => {
 }
 jumboTron();
 
-
-// Creating the form
 const makeForm = () => {
     const createCard = `
     <form>
@@ -53,15 +50,11 @@ randomize();
 document.getElementById('jumbotronBtn').style.display = "none";
     }    
 
-
-// created event listeners to begin sorting function
 const startSorting = (e) => {
     document.getElementById('jumbotronBtn').addEventListener('click', makeForm)
 }
 startSorting();
 
-
-// creating the housename card
 const makeCard = () => {
     const startSorting = inputName.value
     let randomHouse = houseNames[Math.floor(Math.random() * houseNames.length)];
@@ -78,13 +71,10 @@ printToDom('houses', cardPrint)
 removeCard();
 }
 
-// creating another event listener to begin randomizing name w/ houses
 const randomize = (e) => {
     document.getElementById('sortingBtn').addEventListener('click', makeCard)
 }
 
-
-// Calling on line 62 in Make Card FN
 const removeCard = () => {
     const cardsToRemove = document.getElementsByClassName('expel');
     for (let i = 0; i < cardsToRemove.length; i++) {
@@ -96,9 +86,8 @@ const removeCard = () => {
       })
     }
   }
-  //expelStudent Event Listener
+
   const expelStudent = () => {
     document.getElementsByClassName('expel').addEventListener('click', removeCard)
 }
 expelStudent();
-
